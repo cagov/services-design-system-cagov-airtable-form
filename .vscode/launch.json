@@ -13,7 +13,7 @@
       "request": "launch",
       "name": "Debug DIRECT CaGovAirtableForm",
       "program": "debug.js",
-      "cwd": "${workspaceRoot}/WordpressSync",
+      "cwd": "${workspaceRoot}/airtable-form",
       "outputCapture": "std"
     },
   ]

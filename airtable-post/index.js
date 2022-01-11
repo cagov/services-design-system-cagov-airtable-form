@@ -1,45 +1,36 @@
 const CreateAirtableRecord = require("./create-airtable-record.js");
 
+// https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=v2#node-version
+// myTrigger, myInput, myOtherInput
 const postData = (context, request) => {
-  if (request.method === "POST") {
-    let body = "";
-    request.on("data", async (data) => {
-      body = body + data;
-      const airtablePost = await CreateAirtableRecord.init(JSON.parse(body));
-      const jsonSuccess = {
-        method: "POST",
-        message: "Submitted to airtable",
-        data,
-      };
-      console.log("SUCCESS", jsonSuccess, airtablePost);
+  // let body = "";
+  // request.on("data", async data => {
+  //   body = body + data;
+  console.log(request.body);
+    const airtablePost = await CreateAirtableRecord.init(request.body);
+  //   const jsonSuccess = {
+  //     method: "POST",
+  //     message: "Submitted to airtable",
+  //     data
+  //   };
+  //   console.log("SUCCESS", jsonSuccess, airtablePost);
 
-      context.res = {
-        status: 200,
-        "Content-Type": "text/json",
-      };
-    });
-    request.on("end", async (data) => {
-    });
-  } else {
-    context.res = {
-      status: 500,
-      body: `Error - Get requests are not supported.`,
-      payload: json,
-    };
-  }
+  //   context.res = {
+  //     status: 200,
+  //     "Content-Type": "text/json"
+  //   };
+  // });
 };
 
 module.exports = async function (context, request) {
   try {
     // REFS
     // const appName = context.executionContext.functionName;
-    // req.query["Trigger"] || req.body["trigger"] || "(Trigger)";
-    // const postAgent = req.headers["user-agent"];
-    postData(request, context.res);
+    postData(request, context.response);
   } catch (e) {
-    context.res = {
+    context.response = {
       status: 500,
-      body: `Error - ${e.message}`,
+      body: `Error - ${e.message}`
     };
   }
 };
