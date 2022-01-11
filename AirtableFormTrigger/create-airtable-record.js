@@ -5,8 +5,8 @@ const config = {
 };
 
 const CreateAirtableRecord = {
-  init: data => {
-    const { fields, options } = data;
+  init: (data) => {
+    // const { fields, options } = data;
     // console.log("AIRTABLE_API_KEY", AIRTABLE_API_KEY);
     // console.log("fields", fields);
     // console.log("options", options);
@@ -35,8 +35,9 @@ const CreateAirtableRecord = {
     // );
 
     return {
-      "AIRTABLE_API_KEY": AIRTABLE_API_KEY,
-    }
+      data: data,
+      "AIRTABLE_API_KEY": config.AIRTABLE_API_KEY,
+    };
   }
 };
 module.exports = CreateAirtableRecord;
