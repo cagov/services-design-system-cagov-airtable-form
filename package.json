@@ -4,8 +4,7 @@
   "description": "Pass front-end form data to Airtable base",
   "main": "airtable-post/index.js",
   "scripts": {
-    "start": "",
-    "test": "airtable-post/test.js"
+    "start": ""
   },
   "author": "",
   "license": "ISC",
