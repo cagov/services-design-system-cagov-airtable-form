@@ -1,4 +1,4 @@
-const CreateAirtableRecord = require("./create-airtable-record.js");
+// const CreateAirtableRecord = require("./create-airtable-record.js");
 
 // Default script (WORKS)
 module.exports = async function (context, req) {
