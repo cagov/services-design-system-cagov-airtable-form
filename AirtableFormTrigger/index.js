@@ -2,24 +2,22 @@ const CreateAirtableRecord = require("./create-airtable-record.js");
 
 // Default script (WORKS)
 module.exports = async function (context, req) {
-  context.log("JavaScript HTTP trigger function processed a request.");
+//   context.log("JavaScript HTTP trigger function processed a request.");
 
-  // const name = (req.query.name || (req.body && req.body.name));
-//   try {
-//     const data = {
-//       fields: req.body.fields,
-//       options: req.body.options
-//     };
-//   } catch (error) {
-//     context.log(error);
-//   }
-  // const postRequest = CreateAirtableRecord.init(body);
+  try {
+    const postRequest = CreateAirtableRecord.init(req.body);
 
-  const responseMessage = JSON.stringify(req);
+    const responseMessage = JSON.stringify(postRequest);
 
-  context.res = {
-    // status: 200, /* Defaults to 200 */
-    body: responseMessage,
-    // error: error
-  };
+    context.res = {
+      status: 200,
+      body: responseMessage
+    };
+
+  } catch (error) {
+    context.res = {
+      status: 500,
+      body: `Error ${JSON.stringify(error)}`
+    };
+  }
 };

@@ -6,34 +6,37 @@ const config = {
 
 const CreateAirtableRecord = {
   init: data => {
-    const { fields } = data;
-    const { options } = data;
+    const { fields, options } = data;
     // console.log("AIRTABLE_API_KEY", AIRTABLE_API_KEY);
     // console.log("fields", fields);
     // console.log("options", options);
 
-    const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
-      options.database
-    );
+    // const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(
+    //   options.database
+    // );
 
     // console.log("base", options.table);
 
-    base(options.table).create(
-      [
-        {
-          fields
-        }
-      ],
-      (err, records) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        records.forEach(record => {
-          console.log(record.getId());
-        });
-      }
-    );
+    // base(options.table).create(
+    //   [
+    //     {
+    //       fields
+    //     }
+    //   ],
+    //   (err, records) => {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //     records.forEach(record => {
+    //       console.log(record.getId());
+    //     });
+    //   }
+    // );
+
+    return {
+      "AIRTABLE_API_KEY": AIRTABLE_API_KEY,
+    }
   }
 };
 module.exports = CreateAirtableRecord;
