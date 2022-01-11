@@ -8,7 +8,7 @@ const CreateAirtableRecord = {
   init: data => {
     const { fields } = data;
     const { options } = data;
-    console.log("AIRTABLE_API_KEY", AIRTABLE_API_KEY);
+    // console.log("AIRTABLE_API_KEY", AIRTABLE_API_KEY);
     // console.log("fields", fields);
     // console.log("options", options);
 
