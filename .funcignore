@@ -3,3 +3,4 @@
 .git*
 .vscode
 default.env
+local.settings.json
