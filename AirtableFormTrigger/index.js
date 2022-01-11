@@ -15,7 +15,7 @@ module.exports = async function (context, req) {
 //   }
   // const postRequest = CreateAirtableRecord.init(body);
 
-  const responseMessage = "Success";
+  const responseMessage = JSON.stringify(req);
 
   context.res = {
     // status: 200, /* Defaults to 200 */
