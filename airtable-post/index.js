@@ -31,9 +31,10 @@ const postData = (context, request) => {
 
 module.exports = async function (context, request) {
   try {
-    const appName = context.executionContext.functionName;
-    req.query["Trigger"] || req.body["trigger"] || "(Trigger)";
-    const postAgent = req.headers["user-agent"];
+    // REFS
+    // const appName = context.executionContext.functionName;
+    // req.query["Trigger"] || req.body["trigger"] || "(Trigger)";
+    // const postAgent = req.headers["user-agent"];
     postData(request, context.res);
   } catch (e) {
     context.res = {
