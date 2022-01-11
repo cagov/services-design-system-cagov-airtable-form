@@ -7,14 +7,6 @@
       "request": "attach",
       "port": 9229,
       "preLaunchTask": "func: host start"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Debug DIRECT CaGovAirtableForm",
-      "program": "debug.js",
-      "cwd": "${workspaceRoot}/airtable-form",
-      "outputCapture": "std"
-    },
+    }
   ]
 }
