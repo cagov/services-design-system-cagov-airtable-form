@@ -11,7 +11,7 @@ const CreateAirtableRecord = {
     const base = new Airtable({ apiKey: config.AIRTABLE_API_KEY }).base(
       options.database
     );
-
+    
     base(options.table).create(
       [
         {
@@ -30,7 +30,8 @@ const CreateAirtableRecord = {
     );
 
     return {
-      data: "Success"
+      status: 200,
+      message: "Submitted to Airtable"
     };
   }
 };
